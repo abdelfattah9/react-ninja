@@ -1,0 +1,56 @@
+####### 07 - Click Events
+
+#### OnClick
+//App
+const handelClick = () => {
+    console.log('AlslamAlykom, Ahmed')
+  }
+  const handelClick2 = (name) => {
+    console.log('AlslamAlykom' + name)
+}
+//Return
+<button onClick={handelClick}>Click</button>
+
+     <button onClick={() => {
+       handelClick2('Ahmed Abdelfattah')
+     }}>Click2</button>
+
+     {() => handelClick2('Ahmed Omar')}     //One Singel line
+
+#### Event
+
+const eventClick = (e) => {
+    console.log(e)
+  }
+  const eventClickTarget = (e) => {
+    console.log(e.target)
+  }
+
+
+     <button onClick={eventClick}>Show Event Object</button>
+     <button onClick={(e) => eventClickTarget(e)}>Show Target</button>
+
+
+/******************************************************************************/
+####### 08 - Using State (useState hook)
+
+import { useState } from "react";
+//App
+const [name, setName] = useState('Ahmed')
+  const [age, setAge] = useState(31)
+
+  const handelClick = () => {
+    setName('Amr')
+    setAge(26)
+//Return
+    <p>{name} {age}</p>
+    <button onClick={handelClick}>Change</button>
+
+/******************************************************************************/
+
+#### 16 - Using JSON Server
+
+npx json-server --watch data/db.json --port 8000
+
+
+/******************************************************************************/
